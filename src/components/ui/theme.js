@@ -25,9 +25,11 @@ export default createMuiTheme({
     },
     estimate: {
       fontFamily: 'Pacifico',
-      fontSize: '1rem',
+      fontSize: '1.125rem',
       textTransform: 'none',
-      color: 'white'
+      color: 'white',
+      paddingLeft: 20,
+      paddingRight: 20
     }
   }
 });
