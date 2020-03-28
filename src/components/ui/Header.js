@@ -109,16 +109,14 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default () => {
+export default ({ value, setValue, selectedIndex, setSelectedIndex }) => {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-  const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [openMenu, setOpenMenu] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const menuOptions = [
@@ -144,7 +142,6 @@ export default () => {
   ];
 
   useEffect(() => {
-    console.log('useEffect');
     [...menuOptions, ...routes].forEach(route => {
       if (window.location.pathname === `${route.link}`) {
           setValue(route.activeIndex);
