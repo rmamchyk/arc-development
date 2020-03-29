@@ -5,8 +5,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import theme from './ui/theme';
 import Header from './ui/Header';
 import Footer from './ui/Footer';
+import LandingPage from './LandingPage';
 
-function App() {
+export default () => {
   const [value, setValue] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -20,7 +21,7 @@ function App() {
           setSelectedIndex={setSelectedIndex}
         />
         <Switch>
-          <Route exact path="/" component={() => <div style={{height: 1000}}>Home</div>}></Route>
+          <Route exact path="/" component={LandingPage}></Route>
           <Route exact path="/services" component={() => 'Services'}></Route>
           <Route exact path="/custom-software" component={() => 'Custom Software'}></Route>
           <Route exact path="/mobile-apps" component={() => 'Mobile Apps'}></Route>
@@ -37,6 +38,4 @@ function App() {
       </BrowserRouter>
     </ThemeProvider>
   );
-}
-
-export default App;
+};
