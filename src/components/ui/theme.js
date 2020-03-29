@@ -30,6 +30,13 @@ export default createMuiTheme({
       color: 'white',
       paddingLeft: 20,
       paddingRight: 20
+    },
+    h2: {
+      fontFamily: 'Raleway',
+      fontWeight: 700,
+      fontSize: '2.5rem',
+      color: arcBlue,
+      lineHeight: 1.5
     }
   }
 });
