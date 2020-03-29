@@ -58,7 +58,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 25
   },
   button: {
-    ...theme.typography.estimate,
+    ...theme.typography.estimateButton,
     borderRadius: 50,
     marginLeft: 50,
     marginRight: 25,
@@ -125,7 +125,7 @@ export default ({ value, setValue, selectedIndex, setSelectedIndex }) => {
   const menuOptions = [
     { name: 'Services', link: '/services', activeIndex: 1, selectedIndex: 0 },
     { name: 'Custom Software Development', link: '/custom-software', activeIndex: 1, selectedIndex: 1 },
-    { name: 'Mobile App Development', link: '/mobile-apps', activeIndex: 1, selectedIndex: 2 },
+    { name: 'iOS/Android App Development', link: '/mobile-apps', activeIndex: 1, selectedIndex: 2 },
     { name: 'Website Development', link: '/websites', activeIndex: 1, selectedIndex: 3 },
   ];
 

@@ -94,7 +94,7 @@ export default ({ setValue, setSelectedIndex }) => {
                 onClick={() => { setValue(1); setSelectedIndex(2) }}
                 to="/mobile-apps"
               >
-                Mobile App Development
+                iOS/Android App Development
               </Grid>
               <Grid
                 item
