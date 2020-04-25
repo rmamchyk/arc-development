@@ -11,6 +11,7 @@ import CustomSoftwareIcon from '../assets/Custom Software Icon.svg';
 import MobileAppsIcon from '../assets/mobileIcon.svg';
 import WebsiteIcon from '../assets/websiteIcon.svg';
 import RevolutionBackground from '../assets/repeatingBackground.svg';
+import InfoBackground from '../assets/infoBackground.svg';
 
 const useStyles = makeStyles(theme => ({
   mainContainer: {
@@ -108,6 +109,13 @@ const useStyles = makeStyles(theme => ({
       borderRadius: 0,
       width: '100%'
     }
+  },
+  infoContainer: {
+    height: '80em',
+    backgroundImage: `url(${InfoBackground})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
   }
 }));
 
@@ -115,6 +123,7 @@ export default () => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
+  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
   const defaultOptions = {
     loop: true,
@@ -247,6 +256,53 @@ export default () => {
         </Grid>
       </Grid>
 
+      {/*----- Information section -----*/}
+      <Grid item>
+        <Grid container alignItems="center" className={classes.infoContainer}>
+          <Grid
+            item
+            container
+            direction={matchesXS ? 'column' : 'row'}
+            spacing={matchesXS ? 10 : 0}
+            style={{ textAlign: matchesXS ? 'center' : 'inherit' }}
+          >
+            <Grid
+              item
+              sm
+              style={{ marginLeft: matchesXS ? 0 : (matchesSM ? '2em' : '5em') }}
+            >
+              <Grid container direction="column">
+                <Typography variant="h2" style={{ color: 'white' }}>About Us</Typography>
+                <Typography variant="subtitle2">Let's get personal.</Typography>
+                <Grid item>
+                  <Button className={classes.learnButton} style={{ color: 'white', borderColor: 'white' }} variant="outlined">
+                    <span style={{ marginRight: 10 }}>Learn more</span>
+                    <ButtonArrow width={10} height={10} fill="white" />
+                  </Button>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid
+              item
+              sm
+              style={{ marginRight: matchesXS ? 0 : (matchesSM ? '2em' : '5em'), textAlign: matchesXS ? 'center' : 'right' }}
+            >
+              <Grid container direction="column">
+                <Typography variant="h2" style={{ color: 'white' }}>Contact Us</Typography>
+                <Typography variant="subtitle2">Say hello! <span role="img" aria-label="waving hand">👋🏻</span></Typography> 
+                <Grid item>
+                  <Button className={classes.learnButton} style={{ color: 'white', borderColor: 'white' }} variant="outlined">
+                    <span style={{ marginRight: 10 }}>Learn more</span>
+                    <ButtonArrow width={10} height={10} fill="white" />
+                  </Button>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+ 
     </Grid>
   );
 };
