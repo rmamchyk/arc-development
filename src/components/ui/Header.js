@@ -151,6 +151,8 @@ export default ({ value, setValue, selectedIndex, setSelectedIndex }) => {
           if (route.selectedIndex !== undefined) {
             setSelectedIndex(route.selectedIndex);
           }
+      } else if (window.location.pathname === '/estimate') {
+        setValue(5)
       }
     })
   }, []);
@@ -197,7 +199,14 @@ export default ({ value, setValue, selectedIndex, setSelectedIndex }) => {
             />
         )}
       </Tabs>
-      <Button variant="contained" color="secondary" className={classes.button}>
+      <Button
+        component={Link}
+        to="/estimate"
+        variant="contained"
+        color="secondary"
+        className={classes.button}
+        onClick={() => setValue(5)}
+      >
         Free Estimate
       </Button>
       <Menu

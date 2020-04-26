@@ -21,7 +21,7 @@ export default () => {
           setSelectedIndex={setSelectedIndex}
         />
         <Switch>
-          <Route exact path="/" component={LandingPage}></Route>
+          <Route exact path="/" render={() => <LandingPage setValue={setValue} setSelectedIndex={setSelectedIndex} />}></Route>
           <Route exact path="/services" component={() => 'Services'}></Route>
           <Route exact path="/custom-software" component={() => 'Custom Software'}></Route>
           <Route exact path="/mobile-apps" component={() => 'Mobile Apps'}></Route>

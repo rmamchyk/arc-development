@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import {
   makeStyles, Grid, Button, Typography, useTheme, useMediaQuery,
@@ -120,7 +121,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default () => {
+export default ({ setValue, setSelectedIndex }) => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
@@ -147,10 +148,12 @@ export default () => {
 
             <Grid container justify="center" className={classes.buttonContainer}>
               <Grid item>
-                <Button className={classes.estimateButton} variant="contained">Free Estimate</Button>
+                <Button component={Link} to="/estimate"  onClick={() => setValue(5)} className={classes.estimateButton} variant="contained">
+                  Free Estimate
+                </Button>
               </Grid>
               <Grid item>
-                <Button className={classes.learnButtonHero} variant="outlined">
+                <Button component={Link} to="/revolution" onClick={() => setValue(2)} className={classes.learnButtonHero} variant="outlined">
                   <span style={{ marginRight: 10 }}>Learn more</span>
                   <ButtonArrow width={15} height={15} fill={theme.palette.common.blue} />
                 </Button>
@@ -176,7 +179,7 @@ export default () => {
             <Typography variant="subtitle1">
               Complete digital solutions, from investigation to{' '}<span className={classes.specialText}>celebration.</span> 
             </Typography>
-            <Button className={classes.learnButton} variant="outlined">
+            <Button component={Link} to="/custom-software" onClick={() => { setValue(1); setSelectedIndex(1) }} className={classes.learnButton} variant="outlined">
               <span style={{ marginRight: 10 }}>Learn more</span>
               <ButtonArrow width={10} height={10} fill={theme.palette.common.blue} />
             </Button>
@@ -199,7 +202,7 @@ export default () => {
             <Typography variant="subtitle1">
               Integrate you web experience or create a standalone app{matchesSM ? null : <br />}with either mobile platform.
             </Typography>
-            <Button className={classes.learnButton} variant="outlined">
+            <Button component={Link} to="/mobile-apps" onClick={() => { setValue(1); setSelectedIndex(2) }} className={classes.learnButton} variant="outlined">
               <span style={{ marginRight: 10 }}>Learn more</span>
               <ButtonArrow width={10} height={10} fill={theme.palette.common.blue} />
             </Button>
@@ -222,7 +225,7 @@ export default () => {
             <Typography variant="subtitle1">
               Optimized for Search Engines, built for speed.
             </Typography>
-            <Button className={classes.learnButton} variant="outlined">
+            <Button component={Link} to="/websites" onClick={() => { setValue(1); setSelectedIndex(3) }} className={classes.learnButton} variant="outlined">
               <span style={{ marginRight: 10 }}>Learn more</span>
               <ButtonArrow width={10} height={10} fill={theme.palette.common.blue} />
             </Button>
@@ -246,7 +249,7 @@ export default () => {
                   <Typography variant="subtitle1">
                     Visionary insights coupled with cutting-edge technology is a recipe for revolution.
                   </Typography>
-                  <Button className={classes.learnButtonHero} variant="outlined">
+                  <Button component={Link} to="/revolution" onClick={() => setValue(2)} className={classes.learnButtonHero} variant="outlined">
                     <span style={{ marginRight: 10 }}>Learn more</span>
                     <ButtonArrow width={15} height={15} fill={theme.palette.common.blue} /> 
                   </Button>
@@ -264,21 +267,21 @@ export default () => {
             item
             container
             direction={matchesXS ? 'column' : 'row'}
-            spacing={matchesXS ? 10 : 0}
             style={{ textAlign: matchesXS ? 'center' : 'inherit' }}
           >
             <Grid
               item
               sm
               style={{
-                marginLeft: matchesXS ? 0 : (matchesSM ? '2em' : '5em')
+                marginLeft: matchesXS ? 0 : (matchesSM ? '2em' : '5em'),
+                marginBottom: matchesXS ? '10em' : 0
               }}
             >
               <Grid container direction="column">
                 <Typography variant="h2" style={{ color: 'white' }}>About Us</Typography>
                 <Typography variant="subtitle2">Let's get personal.</Typography>
                 <Grid item>
-                  <Button className={classes.learnButton} style={{ color: 'white', borderColor: 'white' }} variant="outlined">
+                  <Button component={Link} to="/about" onClick={() => setValue(3)} className={classes.learnButton} style={{ color: 'white', borderColor: 'white' }} variant="outlined">
                     <span style={{ marginRight: 10 }}>Learn more</span>
                     <ButtonArrow width={10} height={10} fill="white" />
                   </Button>
@@ -298,7 +301,7 @@ export default () => {
                 <Typography variant="h2" style={{ color: 'white' }}>Contact Us</Typography>
                 <Typography variant="subtitle2">Say hello! <span role="img" aria-label="waving hand">👋🏻</span></Typography> 
                 <Grid item>
-                  <Button className={classes.learnButton} style={{ color: 'white', borderColor: 'white' }} variant="outlined">
+                  <Button component={Link} to="/contact" onClick={() => setValue(4)} className={classes.learnButton} style={{ color: 'white', borderColor: 'white' }} variant="outlined">
                     <span style={{ marginRight: 10 }}>Learn more</span>
                     <ButtonArrow width={10} height={10} fill="white" />
                   </Button>
@@ -311,7 +314,7 @@ export default () => {
 
       {/*----- CTA section -----*/}
       <Grid item>
-        <CallToAction />
+        <CallToAction setValue={setValue} />
       </Grid>
     </Grid>
   );
