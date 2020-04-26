@@ -6,6 +6,7 @@ import {
 } from '@material-ui/core';
 
 import ButtonArrow from './ui/ButtonArrow';
+import CallToAction from './ui/CallToAction';
 import animationData from '../animations/landinganimation/data';
 import CustomSoftwareIcon from '../assets/Custom Software Icon.svg';
 import MobileAppsIcon from '../assets/mobileIcon.svg';
@@ -269,7 +270,9 @@ export default () => {
             <Grid
               item
               sm
-              style={{ marginLeft: matchesXS ? 0 : (matchesSM ? '2em' : '5em') }}
+              style={{
+                marginLeft: matchesXS ? 0 : (matchesSM ? '2em' : '5em')
+              }}
             >
               <Grid container direction="column">
                 <Typography variant="h2" style={{ color: 'white' }}>About Us</Typography>
@@ -286,7 +289,10 @@ export default () => {
             <Grid
               item
               sm
-              style={{ marginRight: matchesXS ? 0 : (matchesSM ? '2em' : '5em'), textAlign: matchesXS ? 'center' : 'right' }}
+              style={{
+                marginRight: matchesXS ? 0 : (matchesSM ? '2em' : '5em'),
+                textAlign: matchesXS ? 'center' : 'right'
+              }}
             >
               <Grid container direction="column">
                 <Typography variant="h2" style={{ color: 'white' }}>Contact Us</Typography>
@@ -302,7 +308,11 @@ export default () => {
           </Grid>
         </Grid>
       </Grid>
- 
+
+      {/*----- CTA section -----*/}
+      <Grid item>
+        <CallToAction />
+      </Grid>
     </Grid>
   );
 };
