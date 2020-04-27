@@ -6,6 +6,7 @@ import theme from './ui/theme';
 import Header from './ui/Header';
 import Footer from './ui/Footer';
 import LandingPage from './LandingPage';
+import Services from './Services';
 
 export default () => {
   const [value, setValue] = useState(0);
@@ -21,8 +22,16 @@ export default () => {
           setSelectedIndex={setSelectedIndex}
         />
         <Switch>
-          <Route exact path="/" render={() => <LandingPage setValue={setValue} setSelectedIndex={setSelectedIndex} />}></Route>
-          <Route exact path="/services" component={() => 'Services'}></Route>
+          <Route
+            exact
+            path="/"
+            render={ () => <LandingPage setValue={setValue} setSelectedIndex={setSelectedIndex} />}
+          ></Route>
+          <Route
+            exact
+            path="/services"
+            render={() => <Services setValue={setValue} setSelectedIndex={setSelectedIndex} />}
+          ></Route>
           <Route exact path="/custom-software" component={() => 'Custom Software'}></Route>
           <Route exact path="/mobile-apps" component={() => 'Mobile Apps'}></Route>
           <Route exact path="/websites" component={() => 'Websites'}></Route>
