@@ -12,6 +12,7 @@ import launch from '../assets/launchIcon.svg';
 import maintain from '../assets/maintainIcon.svg';
 import iterate from '../assets/iterateIcon.svg';
 import technologyAnimation from '../animations/technologyAnimation/data';
+import CallToAction from './ui/CallToAction';
 
 
 const useStyles = makeStyles(theme => ({
@@ -25,12 +26,11 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const Revolution = () => {
+const Revolution = ({ setValue }) => {
     const classes = useStyles();
     const theme = useTheme();
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
-    const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
     const technologyOptions = {
         loop: true,
@@ -517,6 +517,10 @@ const Revolution = () => {
                         width="100%"
                     />
                 </Grid>
+            </Grid>
+
+            <Grid item>
+                <CallToAction setValue={setValue} />
             </Grid>
         </Grid>
     )
