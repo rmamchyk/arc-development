@@ -9,6 +9,7 @@ import LandingPage from './LandingPage';
 import Services from './Services';
 import CustomSoftware from './CustomSoftware';
 import MobileApps from './MobileApp';
+import Websites from './Websites';
 
 
 export default () => {
@@ -46,7 +47,11 @@ export default () => {
                         path="/mobile-apps"
                         render={() => <MobileApps setValue={setValue} setSelectedIndex={setSelectedIndex} />}
                     />
-                    <Route exact path="/websites" component={() => 'Websites'} />
+                    <Route
+                        exact
+                        path="/websites"
+                        render={() => <Websites setValue={setValue} setSelectedIndex={setSelectedIndex} />}
+                    />
                     <Route exact path="/revolution" component={() => 'Revolution'} />
                     <Route exact path="/about" component={() => 'About Us'} />
                     <Route exact path="/contact" component={() => 'Contact Us'} />
