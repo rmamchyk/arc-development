@@ -10,6 +10,7 @@ import Services from './Services';
 import CustomSoftware from './CustomSoftware';
 import MobileApps from './MobileApp';
 import Websites from './Websites';
+import Revolution from './Revolution';
 
 
 export default () => {
@@ -52,7 +53,11 @@ export default () => {
                         path="/websites"
                         render={() => <Websites setValue={setValue} setSelectedIndex={setSelectedIndex} />}
                     />
-                    <Route exact path="/revolution" component={() => 'Revolution'} />
+                    <Route
+                        exact
+                        path="/revolution"
+                        render={() => <Revolution setValue={setValue} setSelectedIndex={setSelectedIndex} />}
+                    />
                     <Route exact path="/about" component={() => 'About Us'} />
                     <Route exact path="/contact" component={() => 'Contact Us'} />
                     <Route exact path="/estimate" component={() => 'Estimate'} />
