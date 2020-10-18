@@ -12,6 +12,7 @@ import MobileApps from './MobileApp';
 import Websites from './Websites';
 import Revolution from './Revolution';
 import About from './About';
+import Contact from './Contact';
 
 
 export default () => {
@@ -69,7 +70,11 @@ export default () => {
                         path="/about"
                         render={() => <About setValue={setValue} />}
                     />
-                    <Route exact path="/contact" component={() => 'Contact Us'} />
+                    <Route
+                        exact
+                        path="/contact"
+                        render={() => <Contact setValue={setValue} />}
+                    />
                     <Route exact path="/estimate" component={() => 'Estimate'} />
                 </Switch>
 
