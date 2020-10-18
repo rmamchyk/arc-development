@@ -11,6 +11,7 @@ import CustomSoftware from './CustomSoftware';
 import MobileApps from './MobileApp';
 import Websites from './Websites';
 import Revolution from './Revolution';
+import About from './About';
 
 
 export default () => {
@@ -56,9 +57,18 @@ export default () => {
                     <Route
                         exact
                         path="/revolution"
-                        render={() => <Revolution setValue={setValue} setSelectedIndex={setSelectedIndex} />}
+                        render={() => <Revolution setValue={setValue} />}
                     />
-                    <Route exact path="/about" component={() => 'About Us'} />
+                    <Route
+                        exact
+                        path="/revolution"
+                        render={() => <Revolution setValue={setValue} />}
+                    />
+                    <Route
+                        exact
+                        path="/about"
+                        render={() => <About setValue={setValue} />}
+                    />
                     <Route exact path="/contact" component={() => 'Contact Us'} />
                     <Route exact path="/estimate" component={() => 'Estimate'} />
                 </Switch>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Lottie from 'react-lottie';
 import { makeStyles, useTheme, Grid, Typography, useMediaQuery, Hidden, IconButton } from '@material-ui/core';
 
 import backArrow from '../assets/backArrow.svg';
