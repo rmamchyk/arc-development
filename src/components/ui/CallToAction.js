@@ -37,6 +37,12 @@ const useStyles = makeStyles(theme => ({
         fontSize: '1.5rem',
         '&:hover': {
             backgroundColor: theme.palette.secondary.light
+        },
+        marginRight: '5em',
+        marginLeft: '4em',
+        [theme.breakpoints.down('sm')]: {
+            marginRight: 0,
+            marginLeft: 0
         }
     }
 }));
@@ -80,13 +86,7 @@ const CallToAction = ({setValue}) => {
                 </Grid>
             </Grid>
 
-            <Grid
-                item
-                style={{
-                    marginRight: matchesSM ? 0 : '5em',
-                    marginLeft: matchesSM ? 0 : '4em'
-                }}
-            >
+            <Grid item>
                 <Button component={Link} to="/estimate" onClick={() => setValue(5)} variant="contained" className={classes.estimateButton}>
                     Free Estimate
                 </Button>
